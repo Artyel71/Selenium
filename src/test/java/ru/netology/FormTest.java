@@ -25,9 +25,10 @@ class FormTest {
             driver = null;
         }
         @Test
-        void shouldTestSomething() throws InterruptedException {
+        //void shouldTestSomething() throws InterruptedException {
             //throw new UnsupportedOperationException();
-            driver.get("http://localhost:7777");
-          Thread.sleep(50000);
+          void shouldTestForm() {
+            driver.get(" http://localhost:7777");
+           // Thread.sleep(50000);
         }
 }
