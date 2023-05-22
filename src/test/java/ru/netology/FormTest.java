@@ -13,7 +13,7 @@ class FormTest {
         private WebDriver driver;
         @BeforeAll
         static void setUpAll() {
-            System.setProperty("webdriver.chrom.driver", "./drivers/chromedriver.exe");
+            System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         }
         @BeforeEach
         void setUp() {
@@ -27,7 +27,7 @@ class FormTest {
         @Test
         void shouldTestSomething() throws InterruptedException {
             //throw new UnsupportedOperationException();
-            driver.get("http://localhost:9999");
+            driver.get("http://localhost:7777");
           Thread.sleep(50000);
         }
 }
