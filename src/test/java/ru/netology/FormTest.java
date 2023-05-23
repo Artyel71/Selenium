@@ -47,7 +47,7 @@ public class FormTest {
         //void shouldTestSomething() throws InterruptedException {
         //throw new UnsupportedOperationException();
     void shouldTestForm()  {
-        driver.get(" http://localhost:7777");
+        driver.get(" http://localhost:9999");
         //Thread.sleep(50000);
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Артур Тарусов");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+44078830037");
