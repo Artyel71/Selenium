@@ -1,6 +1,7 @@
 package ru.netology;
 
-import com.google.common.annotations.Beta;
+//import com.google.common.annotations.Beta;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
@@ -11,7 +12,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
-import static com.codeborne.selenide.files.DownloadActions.click;
+//import static com.codeborne.selenide.files.DownloadActions.click;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class FormTest {
@@ -21,14 +22,19 @@ class FormTest {
 
     @BeforeAll
     static void setupAll() {
+        System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
         WebDriverManager.chromedriver().setup();
     }
 
 
-
     @BeforeEach
     void setUp() {
-        driver = new ChromeDriver();
+        // driver = new ChromeDriver();
+        ChromeOptions options = new ChromeOptions();
+        options.addArguments("--disable-dev-shm-usage");
+        options.addArguments("--no-sandbox");
+        options.addArguments("--headless");
+        driver = new ChromeDriver(options);
     }
 
     @AfterEach
