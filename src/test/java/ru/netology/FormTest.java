@@ -1,6 +1,6 @@
 package ru.netology;
 
-import com.google.common.annotations.Beta;
+//import com.google.common.annotations.Beta;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -15,9 +15,9 @@ import org.openqa.selenium.chrome.ChromeOptions;
 //import static com.codeborne.selenide.files.DownloadActions.click;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-class FormTest {
+public class FormTest {
 
-    private static WebDriver driver;
+    private  WebDriver driver;
 
 
     @BeforeAll
