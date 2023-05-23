@@ -1,6 +1,6 @@
 package ru.netology;
 
-//import com.google.common.annotations.Beta;
+import com.google.common.annotations.Beta;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -46,9 +46,9 @@ class FormTest {
     @Test
         //void shouldTestSomething() throws InterruptedException {
         //throw new UnsupportedOperationException();
-    void shouldTestForm() {
-        driver.get(" http://localhost:7777/");
-        // Thread.sleep(50000);
+    void shouldTestForm()  {
+        driver.get(" http://localhost:7777");
+        //Thread.sleep(50000);
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Артур Тарусов");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+44078830037");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
