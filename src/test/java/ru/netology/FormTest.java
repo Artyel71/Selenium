@@ -17,13 +17,9 @@ class FormTest {
 
     private static WebDriver driver;
 
+
     @BeforeAll
     static void setUpAll() {
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("--disable-dev-shm-usage");
-        options.addArguments("--no-sandbox");
-        options.addArguments("--headless");
-        driver = new ChromeDriver(options);
         System.setProperty("webdriver.chrome.driver", "drivers/chromedriver.exe");
 
     }
@@ -42,15 +38,15 @@ class FormTest {
     @Test
         //void shouldTestSomething() throws InterruptedException {
         //throw new UnsupportedOperationException();
-    void shouldTestForm()  {
+    void shouldTestForm() {
         driver.get(" http://localhost:7777/");
-       // Thread.sleep(50000);
+        // Thread.sleep(50000);
         driver.findElement(By.cssSelector("[data-test-id=name] input")).sendKeys("Артур Тарусов");
         driver.findElement(By.cssSelector("[data-test-id=phone] input")).sendKeys("+44078830037");
         driver.findElement(By.cssSelector("[data-test-id=agreement]")).click();
         driver.findElement(By.cssSelector("[type=button]")).click();
         String expected = "Ваша заявка успешно отправлена! Наш менеджер свяжется с вами в ближайшее время.";
         String actual = driver.findElement(By.cssSelector("[data-test-id=order-success]")).getText().trim();
-        assertEquals(expected,actual);
+        assertEquals(expected, actual);
     }
 }
